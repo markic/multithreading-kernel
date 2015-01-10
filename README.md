@@ -22,7 +22,7 @@ Developed by Marin Markić. No licence. April - September 2012.
 
  - Create other user threads by extending OS class thread. You can specify thread name, thread stack size and time slice (minimum run time before thread can be interrupted). Implement custom thread code inside run method. Start thread by calling start method, thread will be started and run will be called on thread selection that depends on scheduler. 
 
- ### Thread API:
+ ### API:
 ```C++
  	* virtual void run() {}
  	* void start();
@@ -35,7 +35,7 @@ Developed by Marin Markić. No licence. April - September 2012.
   	* static Thread * getThreadById(ID id);
 	* static ID getIdOf(TName name);
 ```
- ### Semaphore API:
+Semaphores:
  ```C++
 	* Semaphore(int init = 1); // makes new instance
 
@@ -44,7 +44,7 @@ Developed by Marin Markić. No licence. April - September 2012.
 
 	* int val () const;  // returns the current value of the semaphore
 ```
- ### Events
+Events:
 ```C
 	* PREPAREENTRY(ivtNo, callOldISR) // adds new interrupt service routine that signals event and optionally calls old ISR. Routine is added inside system interrupt vector table, on specified entry number, ivtNo)
 
