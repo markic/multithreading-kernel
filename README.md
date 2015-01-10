@@ -35,7 +35,7 @@ Developed by Marin Markić. No licence. April - September 2012.
   	* static Thread * getThreadById(ID id);
 	* static ID getIdOf(TName name);
 
-### Semaphore API:
+ ### Semaphore API:
 	* Semaphore(int init = 1); // makes new instance
 
 	* virtual int wait(); // blocks running thread on this semaphore
@@ -43,9 +43,9 @@ Developed by Marin Markić. No licence. April - September 2012.
 
 	* int val () const;  // returns the current value of the semaphore
 
-### Events
+ ### Events
 
-	PREPAREENTRY(ivtNo, callOldISR) // adds new interrupt service routine that signals event and optionally calls old ISR. Routine is added inside system interrupt vector table, on specified entry number, ivtNo)
+	* PREPAREENTRY(ivtNo, callOldISR) // adds new interrupt service routine that signals event and optionally calls old ISR. Routine is added inside system interrupt vector table, on specified entry number, ivtNo)
 
-	Event(IVTNo ivtNo); // after calling prepareentry, create event instance
-	int wait(); // blocks running thread, thread will be unblocked when any interrupt is raised on ivtNo
+	* Event(IVTNo ivtNo); // after calling prepareentry, create event instance
+	* int wait(); // blocks running thread, thread will be unblocked when any interrupt is raised on ivtNo
