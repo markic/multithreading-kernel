@@ -24,30 +24,30 @@ Developed by Marin Markić. No licence. April - September 2012.
 
  ### API:
 ```C++
- 	* virtual void run() {}
- 	* void start();
-	* int waitToComplete(); // returns: 1 – run completed, 0 – woken up
-	* int wakeUp(); // returns: 1 – deblocked, 0 – no effect
-	* static int sleep(Time timeToSleep); // returns: 1 – sleep completed, 0 – woken up
+ 	virtual void run() {}
+ 	void start();
+	int waitToComplete(); // returns: 1 – run completed, 0 – woken up
+	int wakeUp(); // returns: 1 – deblocked, 0 – no effect
+	static int sleep(Time timeToSleep); // returns: 1 – sleep completed, 0 – woken up
 
-	* ID getId();
-	* TName getName(); 
-  	* static Thread * getThreadById(ID id);
-	* static ID getIdOf(TName name);
+	ID getId();
+	TName getName(); 
+  	static Thread * getThreadById(ID id);
+	static ID getIdOf(TName name);
 ```
 Semaphores:
  ```C++
-	* Semaphore(int init = 1); // makes new instance
+	Semaphore(int init = 1); // makes new instance
 
-	* virtual int wait(); // blocks running thread on this semaphore
-	* virtual void signal(); // release first blocked thread on this semaphore
+	virtual int wait(); // blocks running thread on this semaphore
+	virtual void signal(); // release first blocked thread on this semaphore
 
-	* int val () const;  // returns the current value of the semaphore
+	int val () const;  // returns the current value of the semaphore
 ```
 Events:
 ```C
-	* PREPAREENTRY(ivtNo, callOldISR) // adds new interrupt service routine that signals event and optionally calls old ISR. Routine is added inside system interrupt vector table, on specified entry number, ivtNo)
+	PREPAREENTRY(ivtNo, callOldISR) // adds new interrupt service routine that signals event and optionally calls old ISR. Routine is added inside system interrupt vector table, on specified entry number, ivtNo)
 
-	* Event(IVTNo ivtNo); // after calling prepareentry, create event instance
-	* int wait(); // blocks running thread, thread will be unblocked when any interrupt is raised on ivtNo
+	Event(IVTNo ivtNo); // after calling prepareentry, create event instance
+	int wait(); // blocks running thread, thread will be unblocked when any interrupt is raised on ivtNo
 ```
