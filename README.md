@@ -13,8 +13,6 @@ School of Electrical Engineering, University of Belgrade, Serbia.
 
 
 Developed by Marin Markić. No licence. April - September 2012.
-- marinmarkic@mail.com
-
 
 ### How to use OS kernel: (see example)
 
